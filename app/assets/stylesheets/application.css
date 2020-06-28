@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.employee-button:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+ .employee-button {
+   background: red;
+   color: white;
+
+ }
