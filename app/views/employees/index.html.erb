@@ -1,0 +1,7 @@
+<% @employees.each do |employee|%>
+    <h1><%= employee.name%></h1>
+   <h3> <%= employee.title%> </h3>
+   <h4> <%= employee.company.name %> </h4>
+
+    <%= button_to "Delete", employee_path(employee), method: :delete %>
+<%end%>
