@@ -1,7 +1,12 @@
 class EmployeesController < ApplicationController
 
   def index
-    @employees = Employee.all
+    # Search logic
+    if params[:search]
+      @employees = Employee.search_by_name(params[:search])
+    else
+      @employees = Employee.all
+    end
   end
 
   def new
@@ -31,7 +36,7 @@ class EmployeesController < ApplicationController
 
   private
   def employee_params
-    params.require(:employee).permit(:name, :title, :company_id)
+    params.require(:employee).permit(:name, :title, :company_id, :search)
   end
 
 

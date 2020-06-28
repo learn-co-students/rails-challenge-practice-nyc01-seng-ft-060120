@@ -1,3 +1,7 @@
-<%= @employee.name %>
-<%= @employee.title %>
-<%= @employee.company.name if @employee.company %>
+
+<div id = "show-wrapper">
+  <h1><%= @employee.name %></h1>
+  <p>Title: <%= @employee.title %></p>
+  <h3>Company: <%= @employee.company.name if @employee.company %></h3>
+  <%= link_to "Back", employees_path %>
+</div>
