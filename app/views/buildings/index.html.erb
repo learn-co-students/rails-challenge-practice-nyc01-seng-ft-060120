@@ -1,0 +1,5 @@
+<ul>
+<% @buildings.each do |building| %>
+    <li><%= link_to(building.name, building_path(building))%></li>
+<% end %>
+</ul>
