@@ -1,7 +1,13 @@
+<h3>All Buildings</h3>
+<ol>
 <% @buildings.each do |b|%>
-  <%= link_to b.name, building_path(b) %>
-  <%= b.country %>
-  <%= b.address %>
-  <%= b.rent_per_floor %>
-  <%= b.number_of_floors %>
+
+<li>
+  <%= link_to b.name, building_path(b) %> <br>
+  <ul>
+    <li>Rent per floor: <%= b.rent_per_floor %> </li>
+    <li>Number of Available Floors: <%= b.number_of_floors %></li> 
+  </ul>
+</li><br>
 <% end %>
+</ol>
