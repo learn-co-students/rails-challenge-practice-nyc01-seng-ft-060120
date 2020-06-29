@@ -1,0 +1,27 @@
+<h2><%= @company.name %></h2>
+
+<h4>Offices:</h4>
+<% @company.company_buildings.each do |cb|%>
+  <strong>Name: </strong>
+    <%= link_to cb.name, building_path(cb) %> <br>
+  <strong>Address: </strong>
+    <%= cb.address %> <br>
+  <strong>Floors: </strong>
+    <% cb.offices_by_company(@company.id).each do |o| %>
+    <%= o.floor %>
+  <% end %>
+<% end %>
+<h4>How Much Rent Are They Paying?</h4>
+<strong><%= number_to_currency(@company.total_rent)%> /per month</strong>
+
+<h4>Employees:</h4>
+<% @company.employees.each do |em| %>
+  <%= link_to em.name, company_employee_path(em) %>
+  <p><%= button_to "Delete Employee", company_employee_path(em.company, em), method: :delete, data: { confirm: "Are you sure?" }  %> <br></p>
+<% end %>
+
+<h4>Add New Employee</h4>
+<%= render 'employees/new', employee: @company.employees.build %>
+
+
+

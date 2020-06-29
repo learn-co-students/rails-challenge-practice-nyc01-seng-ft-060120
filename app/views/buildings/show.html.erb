@@ -1,0 +1,9 @@
+<%= @building.name %>
+
+<% if @building.companies %>
+  <% @building.unique_companies.each do |c| %>
+    <%= link_to c.name, company_path(c) %>
+  <% end %>
+<% end %>
+
+<%= @building.number_of_floors_available %>
