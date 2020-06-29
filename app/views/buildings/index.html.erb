@@ -1,0 +1,7 @@
+<% @buildings.each do |b|%>
+  <%= link_to b.name, building_path(b) %>
+  <%= b.country %>
+  <%= b.address %>
+  <%= b.rent_per_floor %>
+  <%= b.number_of_floors %>
+<% end %>

@@ -1,0 +1,4 @@
+
+  <%= link_to employee.name, employee_path(employee) %> <br>
+  <%= employee.company.name %> <br>
+  <%= link_to "Delete Employee", employee_path(employee), method: :delete, data: { confirm: "Are you sure?" } %>
