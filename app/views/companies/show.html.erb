@@ -8,8 +8,8 @@
     <%= cb.address %> <br>
   <strong>Floors: </strong>
     <% cb.offices_by_company(@company.id).each do |o| %>
-    <%= o.floor %>
-  <% end %>
+    <%= o.floor %> 
+  <% end %> <br> <br>
 <% end %>
 <h4>How Much Rent Are They Paying?</h4>
 <strong><%= number_to_currency(@company.total_rent)%> /per month</strong>

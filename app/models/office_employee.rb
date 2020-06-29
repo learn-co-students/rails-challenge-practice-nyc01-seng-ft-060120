@@ -1,0 +1,3 @@
+class OfficeEmployee < ApplicationRecord
+
+end

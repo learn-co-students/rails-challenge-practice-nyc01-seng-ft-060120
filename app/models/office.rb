@@ -22,8 +22,16 @@ class Office < ApplicationRecord
     companies.select(:name, :id).distinct
   end
 
+  def company_name 
+    self.company.name
+  end
+
   def rent_per_floor
     builing.rent_per_floor
+  end
+
+  def company_employees
+    self.company.employees
   end
   
 

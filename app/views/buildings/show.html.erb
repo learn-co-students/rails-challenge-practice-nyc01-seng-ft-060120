@@ -1,9 +1,15 @@
-<%= @building.name %>
+<h3><%= @building.name %></h3>
 
 <% if @building.companies %>
   <% @building.unique_companies.each do |c| %>
-    <%= link_to c.name, company_path(c) %>
+    <h3><strong>Companies: </strong></h3><%= link_to c.name, company_path(c) %>
   <% end %>
 <% end %>
 
-<%= @building.number_of_floors_available %>
+<p>Available Floors: <%= @building.number_of_floors_available %></p>
+
+<h3>Offices</h3>
+
+<% @building.offices.each do |o| %>
+  <%= link_to o.company_name, building_office_path(@building, o) %>
+<% end %>

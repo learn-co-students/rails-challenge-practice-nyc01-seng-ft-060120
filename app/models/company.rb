@@ -37,14 +37,15 @@ class Company < ApplicationRecord
       sum += rent
     end
     sum
-  end
-
-  #per company building,
-  #find buildingg.rent_by_floor
-  #multiply that by number of offices 
+  end 
 
   def offices_per_building(building_id)
     num = self.offices.filter{ |o| o.building_id == building_id}.count
   end
+
+  def office_employees
+    self.employees.where(company_id: self.building_id)
+  end
+
 
 end

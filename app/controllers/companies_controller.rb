@@ -1,6 +1,5 @@
 class CompaniesController < ApplicationController
 before_action :set_company, only: [:edit, :show, :update]
-#before_action :get_employee, only: [:edit, :show, :update]
 
   def index
     @companies = Company.all
