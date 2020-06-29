@@ -1,0 +1,7 @@
+<ul>
+<% @employees.each do |employee|%>
+<li><%= link_to(employee.name, employee_path(employee))%></li>
+<%= button_to "Remove", employee_path(employee), :method => :delete, :class => "button" %>
+<%end%>
+
+</ul>

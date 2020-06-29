@@ -1,0 +1,10 @@
+<h1><%= @company.name %></h1>
+
+<% @company.buildings.each do |building|%>
+    <h3><%=building.name%></h3>
+    Floors: <%= building.offices.map(&:floor) %>
+<%end%>
+
+<% @company.employees.each do |employee| %> 
+<p> <%= employee.name %> </p>
+<%end%>
