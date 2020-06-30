@@ -1,0 +1,33 @@
+#employee-wrapper {
+  span {
+    color: gold;
+  }
+  .employee-container {
+    padding: 1em;
+    margin: .5em 0;
+    border: 1px solid black;
+  }
+  .employee-button {
+    margin: .2em 0;
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    background: black;
+    border: none;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+  .warning {
+    background: red;
+  }
+  .info {
+    background: blue;
+  }
+}
+
+#show-wrapper {
+  padding: 1em;
+  box-shadow: 5px 5px 10px gray;
+}

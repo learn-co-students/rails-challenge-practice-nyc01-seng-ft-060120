@@ -1,0 +1,4 @@
+<h1>building#index</h1>
+<% @buildings.each do |building| %>
+<h3><%= link_to building.name, building_path(building) %></h3>
+<% end %>
