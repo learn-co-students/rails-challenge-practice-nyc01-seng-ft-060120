@@ -1,0 +1,19 @@
+<h1><%= @building.name %></h1>
+
+<h2>Country: <%= @building.country %></h2>
+<h2>Address: <%= @building.address %></h2>
+<h2>Number of Floors: <%= @building.number_of_floors %></h2>
+<h2>Rent/Floor: $<%= @building.rent_per_floor %></h2>
+
+<h4>Occupants:</h4>
+ <% @building.companies.each do |company|  %>
+<li><%=company.name %></li>
+<% end %>
+
+<h4>Total Rent: $<%= @building.rent_per_floor * @building.number_of_floors_available.count %></h4>
+
+<br>
+
+<%= link_to "Back to all Buildings", buildings_path %>
+
+

@@ -1,0 +1,19 @@
+ <%= form_tag(employees_path, :method => :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+  <% @employees.each do |employee| %>
+    <div class = "employee-container">
+      <h2><%= employee.name %> <span><%= employee.title %></span></h2>
+      <p>Company: <%= link_to employee.company.name, company_path(employee.company) %></p>
+
+      <%= button_to "View", employee_path(employee), :method => :get, :class => "employee-button info"%>
+      <%= button_to "Remove", employee_path(employee),
+      :method => :delete,
+      :class => "employee-button warning",
+      :data => {:confirm => "Are you sure?"}
+      %>
+    </div>
+  <% end %>
+</div>
